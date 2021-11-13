@@ -1,0 +1,36 @@
+node_modules/**/*
+.expo/*
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+coverage/
+web-build/
+web-report/
+
+*.xcuserstate
+.idea
+# macOS
+.DS_Store
+
+*.code-workspace
+
+# ios
+ios/Podfile.lock
+ios/Pods
+ios/fastlane
+ios/Gemfile
+ios/Gemfile.lock
+ios/ETM.app.dSYM.zip
+ios/ETM.ipa
+
+# android
+android/local.properties
+android/.gradle
+android/app/build
+android/build
+android/app/src/main/assets
+android/java_pid*
