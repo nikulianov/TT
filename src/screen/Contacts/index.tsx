@@ -1,12 +1,15 @@
 import React, {FC} from 'react'
 import {View, Text} from 'react-native'
+import MainLayout from '../../HOC/MainLayout'
 
-const Contacts: FC = () => {
+export const Contacts:FC = () => {
+
   return (
-      <View>
-        <Text>Контакты</Text>
-      </View>
+      <MainLayout>
+       <View>
+         <Text>ggg</Text>
+       </View>
+      </MainLayout>
   )
 }
 
-export default Contacts

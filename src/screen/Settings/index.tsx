@@ -1,12 +1,13 @@
 import React, {FC} from 'react'
 import {View, Text} from 'react-native'
+import MainLayout from '../../HOC/MainLayout'
 
-const Settings: FC = () => {
+export const Settings: FC = () => {
   return (
-      <View>
-        <Text>Настройки</Text>
-      </View>
+      <MainLayout>
+        <View>
+          <Text>Настройки</Text>
+        </View>
+      </MainLayout>
   )
 }
-
-export default Settings
