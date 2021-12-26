@@ -5,13 +5,14 @@ import {firstSymbolName, getDateLastMessage} from '../../../../utils/main'
 import {ContactType} from '../../types'
 
 interface ItemPropsTypes {
-  item: ContactType
+  item: ContactType,
+  openChat: () => void
 }
 
-export const ChatItem: FC<ItemPropsTypes> = ({item}) => {
+export const ChatItem: FC<ItemPropsTypes> = ({item, openChat}) => {
   const {name, message, time} = item
   return (
-      <TouchableOpacity onPress={()=> console.log('ggg')} onLongPress={()=>console.log('ggffff')}>
+      <TouchableOpacity onPress={openChat} onLongPress={openChat}>
         <View style={style.chatWrapper}>
           <View style={style.chatBlock}>
             <View style={style.avatar}>

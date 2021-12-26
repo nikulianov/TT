@@ -10,6 +10,7 @@ npm-debug.*
 coverage/
 web-build/
 web-report/
+package-lock.json
 
 *.xcuserstate
 .idea

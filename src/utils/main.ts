@@ -18,3 +18,10 @@ export const getDateLastMessage = (time: Date) =>{
   // const timeNow = new Date()
   return daysWeeksSymbol[time.getDay() - 1]
 }
+
+export const joinName = (lastName:string | undefined, firstName:string | undefined):string =>{
+  if(!lastName && !firstName){
+    return ''
+  }
+  return `${lastName} ${firstName}`
+}

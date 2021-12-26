@@ -1,5 +1,5 @@
-import React, {FC} from 'react'
-import {View, Text, FlatList, ListRenderItem} from 'react-native'
+import React, {FC, useCallback} from 'react'
+import {FlatList, ListRenderItem} from 'react-native'
 import MainLayout from '../../HOC/MainLayout'
 import {ContactType} from './types'
 import {ChatItem} from './Components/ChatItem'
@@ -14,39 +14,43 @@ const data: ContactType[] = [
   },
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad5533ab8b28ba',
-    name: 'Анжелика',
+    name: 'Ваня',
     message: 'Привет',
-    time: new Date(),
+    time: new Date('12/23/2021'),
     img: '',
   },
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53533abb28ba',
-    name: 'Анжелика',
+    name: 'Роман',
     message: 'Привет',
-    time: new Date(),
+    time: new Date('12/22/2021'),
     img: '',
   },
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad55533abb28ba',
-    name: 'Анжелика',
+    name: 'Степан',
     message: 'Привет',
-    time: new Date(),
+    time: new Date('12/22/2021'),
     img: '',
   },
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad5533a1bb28ba',
-    name: 'Анжелика',
+    name: 'Илья',
     message: 'Привет',
-    time: new Date(),
+    time: new Date('12/21/2021'),
     img: '',
   },
 ]
 
-export const Chats: FC = () => {
+export const Chats: FC<any> = ({navigation}) => {
+
+  const openChat = useCallback(() =>{
+    navigation.push('Chat')
+  },[navigation])
 
   const renderChatItem: ListRenderItem<ContactType> = ({item}) => {
     return (
-        <ChatItem item={item}/>
+        <ChatItem item={item} openChat={openChat}/>
     )
   }
 

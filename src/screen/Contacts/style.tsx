@@ -1,18 +1,18 @@
 import {StyleSheet} from 'react-native'
-import { THEME } from '../../theme'
+import {THEME} from '../../theme'
 
 export const style = StyleSheet.create({
-  contactWrapper:{},
-  contactBlock:{
-    flexDirection: 'row',
-    paddingHorizontal: 15,
-    paddingVertical: 15,
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
+  wrapper: {
+    paddingTop: 10,
   },
-  avatar:{
-    width: 50,
-    height: 50,
+  contactBlock: {
+    flexDirection: 'row',
+    paddingLeft: 15,
+    paddingVertical: 5,
+  },
+  avatar: {
+    width: 35,
+    height: 35,
     backgroundColor: '#fff',
     borderRadius: 50,
     display: 'flex',
@@ -20,28 +20,26 @@ export const style = StyleSheet.create({
     alignItems: 'center',
     marginRight: 15,
   },
-  avatarSymbol:{
-    fontSize: 20,
+  avatarSymbol: {
+    fontSize: 12,
     fontWeight: 'bold',
+  },
+  avatarImg:{
+    width: 35,
+    height: 35,
   },
   contactInfo: {
     flex: 1,
-    justifyContent: 'center'
+    justifyContent: 'flex-start',
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+    paddingBottom: 5,
   },
-  nameBlock: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 5,
-
+  name: {
+    fontSize: 16,
+    fontWeight: '500',
   },
-  nameText: {
-    fontSize: 15,
-    fontWeight: '400'
-  },
-  timeText:{
-    fontSize: 10
-  },
-  message: {
+  onlineInfo: {
     fontSize: 12,
     color: THEME.nameMessageColor,
     opacity: 0.8
