@@ -53,6 +53,8 @@ const AppNavigation = () => {
               },
               tabBarActiveTintColor: 'tomato',
               tabBarInactiveTintColor: 'gray',
+              keyboardHidesTabBar: true,
+
             })}
         >
           <Tab.Screen

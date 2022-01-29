@@ -1,10 +1,13 @@
-import {StyleSheet} from 'react-native'
-import {THEME} from '../../theme'
-
+import {Dimensions, StyleSheet} from 'react-native'
+// const {height } = Dimensions.get('window')
 export const style = StyleSheet.create({
   wrapper: {
+    height: '100%',
+    paddingTop: 10,
+    position: 'relative',
+  },
+  messageWrapper:{
     flex: 1,
-    paddingVertical: 10,
   },
   messageContent: {
     flexDirection: 'row',
@@ -41,6 +44,5 @@ export const style = StyleSheet.create({
   },
   message: {
 
-  }
-
+  },
 })

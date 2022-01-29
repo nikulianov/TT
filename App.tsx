@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native'
 import {request, PERMISSIONS} from 'react-native-permissions'
 
 import AppNavigation from './src/navigations/AppNavigation'
+import { StatusBar } from 'react-native'
 
 const App: FC = () => {
   React.useEffect(()=>{
@@ -16,6 +17,7 @@ const App: FC = () => {
   },[])
   return (
       <NavigationContainer>
+        <StatusBar backgroundColor="#00000020" barStyle="light-content" />
         <AppNavigation/>
       </NavigationContainer>
   )
