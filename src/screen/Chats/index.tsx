@@ -44,8 +44,8 @@ const data: ContactType[] = [
 
 export const Chats: FC<any> = ({navigation}) => {
 
-  const openChat = useCallback(() =>{
-    navigation.push('Chat')
+  const openChat = useCallback((contact) =>{
+    navigation.navigate('Chat', {contact})
   },[navigation])
 
   const renderChatItem: ListRenderItem<ContactType> = ({item}) => {

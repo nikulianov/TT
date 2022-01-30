@@ -1,8 +1,6 @@
 import React, {FC, useState, useCallback, useEffect} from 'react'
 import {GiftedChat, IMessage} from 'react-native-gifted-chat'
-import { Keyboard } from 'react-native';
-import MainLayout from '../../HOC/MainLayout'
-
+// import 'dayjs/locale/ru'
 import {style} from './style'
 
 
@@ -42,7 +40,7 @@ import {style} from './style'
 // ]
 
 const Chat: FC = () => {
-  const [messages, setMessages] = useState<any>([]);
+  const [messages, setMessages] = useState<IMessage[]>([]);
 
   useEffect(() => {
     setMessages([
@@ -57,9 +55,6 @@ const Chat: FC = () => {
         },
       },
     ])
-    return ()=>{
-      Keyboard.dismiss()
-    }
   }, [])
 
   const onSend = useCallback((messages = []) => {
@@ -69,6 +64,7 @@ const Chat: FC = () => {
   return (
       <GiftedChat
           messages={messages}
+          placeholder="Введите сообщение"
           onSend={messages => onSend(messages)}
           user={{
             _id: 1,

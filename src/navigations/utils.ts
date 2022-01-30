@@ -3,7 +3,7 @@ import {headerOptions} from './options'
 import { ContactsPhoneType } from '../globalTypes/contactsPhoneType';
 
 interface GenerateChatTitlePropsType {
-  contact: ContactsPhoneType
+  contact: ContactsPhoneType | any
 }
 
 export const getTabIcon = (name: string, focused: boolean) => {
@@ -20,6 +20,11 @@ export const generateChatTitle = (params: GenerateChatTitlePropsType) => {
   if(!contact){
     return headerOptions('Чат')
   }
-  const fullName =  joinName(contact.givenName, contact.familyName)
+  let fullName
+  if(!contact.givenName && !contact.familyName){
+    fullName = contact.name
+  } else{
+    fullName =  joinName(contact.givenName, contact.familyName)
+  }
   return headerOptions(fullName)
 }

@@ -6,13 +6,13 @@ import {ContactType} from '../../types'
 
 interface ItemPropsTypes {
   item: ContactType,
-  openChat: () => void
+  openChat: (contact: any) => void
 }
 
 export const ChatItem: FC<ItemPropsTypes> = ({item, openChat}) => {
   const {name, message, time} = item
   return (
-      <TouchableOpacity onPress={openChat} onLongPress={openChat}>
+      <TouchableOpacity onPress={()=>openChat(item)}>
         <View style={style.chatWrapper}>
           <View style={style.chatBlock}>
             <View style={style.avatar}>

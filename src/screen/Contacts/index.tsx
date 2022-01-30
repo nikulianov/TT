@@ -18,7 +18,7 @@ export const Contacts: FC = () => {
     })
   }, [])
   const openChat = useCallback((contact) => {
-    navigation.push('Chat', {contact})
+    navigation.navigate('Chat', {contact})
   }, [navigation])
 
   const renderContactItem = useCallback(({item}) => {
