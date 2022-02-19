@@ -10,7 +10,8 @@ type ChatScreenPropsRoute = {
 
 export type RootStackParamList = {
   Root: undefined;
-  Chat: ChatScreenPropsRoute
+  Chat: ChatScreenPropsRoute;
+  Login: undefined;
 }
 
 export type StackParamList = {

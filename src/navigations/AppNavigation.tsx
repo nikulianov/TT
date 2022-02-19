@@ -12,6 +12,7 @@ import Chat from '../screen/Chat'
 import { RootStackParamList, StackParamList, TabParamList } from './types'
 import { headerOptions } from '../constans/headerOptions';
 import { tabStyleOptions } from '../constans/tabBarOptions';
+import Login from '../screen/Login';
 
 const AppNavigation = () => {
   const RootNav = createNativeStackNavigator<RootStackParamList>()
@@ -68,7 +69,7 @@ const AppNavigation = () => {
   }
   return (
       <RootNav.Navigator
-          initialRouteName="Root"
+          initialRouteName='Login'
           screenOptions={{
             ...headerOptions,
           }}
@@ -77,6 +78,7 @@ const AppNavigation = () => {
         <RootNav.Screen name="Chat" component={Chat} options={({route}) => ({
           ...generateChatTitle(route.params)
         })}/>
+        <RootNav.Screen name="Login" component={Login} options={{title: 'Авторизация', headerShown: false}}/>
       </RootNav.Navigator>
   )
 }
