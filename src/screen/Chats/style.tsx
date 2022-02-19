@@ -36,10 +36,12 @@ export const style = StyleSheet.create({
   },
   nameText: {
     fontSize: 15,
-    fontWeight: '400'
+    fontWeight: '400',
+    color: THEME.nameColor,
   },
   timeText:{
-    fontSize: 10
+    fontSize: 10,
+    color: THEME.nameMessageColor
   },
   message: {
     fontSize: 12,

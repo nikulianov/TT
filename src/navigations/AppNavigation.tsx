@@ -10,6 +10,8 @@ import {Contacts} from '../screen/Contacts'
 import {getTabIcon, generateChatTitle} from './utils'
 import Chat from '../screen/Chat'
 import { RootStackParamList, StackParamList, TabParamList } from './types'
+import { headerOptions } from '../constans/headerOptions';
+import { tabStyleOptions } from '../constans/tabBarOptions';
 
 const AppNavigation = () => {
   const RootNav = createNativeStackNavigator<RootStackParamList>()
@@ -20,6 +22,9 @@ const AppNavigation = () => {
     return (
         <Stack.Navigator
           initialRouteName="Chats"
+          screenOptions={{
+            ...headerOptions,
+          }}
         >
           <Stack.Screen name="Chats" component={Chats} options={{title: 'Чаты'}}/>
         </Stack.Navigator>
@@ -30,6 +35,9 @@ const AppNavigation = () => {
     return (
         <Stack.Navigator
           initialRouteName="Contacts"
+          screenOptions={{
+            ...headerOptions,
+          }}
         >
           <Stack.Screen name="Contacts" component={Contacts} options={{title: 'Контакты'}}/>
         </Stack.Navigator>
@@ -41,17 +49,14 @@ const AppNavigation = () => {
         <Tab.Navigator
             initialRouteName="Chats"
             screenOptions={({route}) => ({
-
               tabBarIcon: ({focused, color, size}) => {
 
                 // You can return any component that you like here!
                 return <Ionicons name={getTabIcon(route.name, focused)} size={size} color={color}/>
               },
-              tabBarActiveTintColor: 'tomato',
-              tabBarInactiveTintColor: 'gray',
               headerShown: false,
               keyboardHidesTabBar: true,
-
+              ...tabStyleOptions,
             })}
         >
           <Tab.Screen
@@ -65,7 +70,7 @@ const AppNavigation = () => {
       <RootNav.Navigator
           initialRouteName="Root"
           screenOptions={{
-            headerBackTitle: 'Назад',
+            ...headerOptions,
           }}
       >
         <RootNav.Screen name="Root" component={TabNavigation} options={{title: 'Контакты', headerShown: false}}/>

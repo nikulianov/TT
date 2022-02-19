@@ -38,6 +38,7 @@ export const style = StyleSheet.create({
   name: {
     fontSize: 16,
     fontWeight: '500',
+    color: THEME.nameColor
   },
   onlineInfo: {
     fontSize: 12,

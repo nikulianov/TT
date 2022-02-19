@@ -1,44 +1,10 @@
 import React, {FC, useState, useCallback, useEffect} from 'react'
 import {GiftedChat, IMessage} from 'react-native-gifted-chat'
+import {ImageBackground} from 'react-native'
 // import 'dayjs/locale/ru'
-import {style} from './style'
+// import {style} from './style'
 
-
-// const DATA: DataType[] = [
-//   {
-//     id: 'gfdsgwgdsg',
-//     message: 'Привет как дела? что делаем в субботу? Мне нужно срочно знать ответ',
-//     name: 'Анжелика',
-//     img: 'ggg',
-//     time: '14:30',
-//     my: false,
-//   },
-//   {
-//     id: 'gfdsgwsgdsg',
-//     message: 'Я просто хочу сразу все уточнить',
-//     name: 'Анжелика',
-//     img: 'ggg',
-//     time: '14:30',
-//     my: false,
-//   },
-//   {
-//     id: 'gfdsgwggdsg',
-//     message: 'Ты тут?',
-//     name: 'Анжелика',
-//     img: 'ggg',
-//     time: '14:30',
-//     my: false,
-//   },
-//   {
-//     id: 'gfdsgwagdsg',
-//     message: 'Да, конечно',
-//     name: 'Николай',
-//     img: 'ggg',
-//     time: '14:30',
-//     my: true,
-//   },
-// ]
-
+const image = { uri: 'https://krot.info/uploads/posts/2021-01/1610216154_4-p-fon-chata-whatsapp-5.png' }
 const Chat: FC = () => {
   const [messages, setMessages] = useState<IMessage[]>([]);
 
@@ -50,26 +16,27 @@ const Chat: FC = () => {
         createdAt: new Date(),
         user: {
           _id: 2,
-          name: 'React Native',
+          name: 'Mr.Bot',
           avatar: 'https://placeimg.com/140/140/any',
         },
       },
     ])
   }, [])
 
-  const onSend = useCallback((messages = []) => {
-    setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
+  const onSend = useCallback((mess = []) => {
+    setMessages(previousMessages => GiftedChat.append(previousMessages, mess))
   }, [])
-
   return (
-      <GiftedChat
-          messages={messages}
-          placeholder="Введите сообщение"
-          onSend={messages => onSend(messages)}
-          user={{
-            _id: 1,
-          }}
-      />
+      <ImageBackground source={image} resizeMode="cover" style={{flex: 1}}>
+        <GiftedChat
+            messages={messages}
+            placeholder="Введите сообщение"
+            onSend={mess => onSend(mess)}
+            user={{
+              _id: 1,
+            }}
+        />
+      </ImageBackground>
   )
 }
 
