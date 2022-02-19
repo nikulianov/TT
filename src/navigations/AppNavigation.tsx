@@ -43,7 +43,7 @@ const AppNavigation = () => {
         </Stack.Navigator>
     )
   }
-
+ // Тест
   const TabNavigation = () => {
     return (
         <Tab.Navigator
