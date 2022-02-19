@@ -18,6 +18,8 @@ target 'TT' do
    pod 'Permission-PhotoLibrary', :path => "#{permissions_path}/PhotoLibrary"
    pod 'Permission-PhotoLibraryAddOnly', :path => "#{permissions_path}/PhotoLibraryAddOnly"
 
+   pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text', :modular_headers => true
+
 
   target 'TTTests' do
     inherit! :complete
